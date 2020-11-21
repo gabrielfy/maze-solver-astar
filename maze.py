@@ -17,9 +17,15 @@ class Cell(object):
         self.color = None
 
     def draw(self):
-        if self.visited:
-            self._fill((0, 0, 255) if self.color is None else self.color)
+        color = (0, 0, 0)
 
+        if self.color is not None:
+            color = self.color
+        elif self.visited:
+            color = (0, 0, 255)
+        
+        self._fill(color)
+    
         if self._visited:
             x, y = self.x * self.size, self.y * self.size
             # top

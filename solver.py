@@ -45,7 +45,9 @@ if __name__ == '__main__':
     maze = make_maze(screen, 20)
 
     stack = []
+
     goal = maze[-1][-1]
+    goal.color = (255, 0, 0)
     start = maze[0][0]
     start.visited = True
     stack.append(start)
